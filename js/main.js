@@ -63,3 +63,89 @@ $(document).ready(function () {
         $(answer).find("p").css("opacity", opacity);
     });
 });
+
+var accardion_item = document.getElementsByClassName('acc_input');
+var accardion_cross = document.getElementsByClassName('circle-plus');
+var accardion = document.getElementsByClassName('ac-container')[0];
+
+window.onload = function () {
+    accardion_cross[0].classList.add('opened');
+}
+accardion.addEventListener('click', function () {
+    for (var i = 0; i < accardion_item.length; i++) {
+        if (accardion_item[i].checked) {
+            for (var j = 0; j < accardion_cross.length; j++) {
+                accardion_cross[j].classList.remove('opened');
+            }
+            accardion_cross[i].classList.add('opened');
+        }
+    }
+})
+
+$(document).ready(function () {
+
+    $("#price_id").ionRangeSlider({
+        min: 300000,
+        max: 15000000,
+        step: 20000,
+        prettify: true,
+        from: 6000000,
+        grid: true,
+        postfix: " руб."
+    });
+
+    $("#payment").ionRangeSlider({
+        min: 300000,
+        max: 15000000,
+        step: 20000,
+        prettify: true,
+        from: 6000000,
+        grid: true,
+        postfix: " руб."
+    });
+
+    $("#mortgage").ionRangeSlider({
+        min: 5,
+        max: 25,
+        step: 1,
+        prettify: true,
+        from: 15,
+        grid: true,
+        postfix: " лет"
+    });
+});
+
+var count_start = document.getElementsByClassName('count_start')[0];
+var count_items = document.getElementsByClassName('irs-single');
+var condition_value = document.getElementsByClassName('condition_value_sum')[0];
+var result = document.getElementsByClassName('result_num_payment')[0];
+var sum_of_mortgage = 0;
+var price_to_count = 0;
+var payment_to_count = 0;
+
+var a = document.getElementById('price_id');
+
+function count() {
+    var price_start = count_items[0].innerHTML.indexOf(' руб.');
+    var price = count_items[0].innerHTML.substr(0, price_start);
+    price_to_count = price.split(" ").join('');
+
+    var payment_start = count_items[1].innerHTML.indexOf(' руб.');
+    var payment = count_items[1].innerHTML.substr(0, payment_start);
+    payment_to_count = payment.split(" ").join('');
+
+    var mortgage_start = count_items[2].innerHTML.indexOf(' лет');
+    var mortgage = count_items[2].innerHTML.substr(0, mortgage_start);
+    var mortgage_time = mortgage.split(" ").join('');
+
+    sum_of_mortgage = Number(price_to_count) - Number(payment_to_count);
+    if(Number(sum_of_mortgage) > 0 || Math.round(sum_of_mortgage / (12 * Number(mortgage_time))) > 0) {
+        condition_value.innerHTML = sum_of_mortgage.toLocaleString() + " руб.";
+        result.innerHTML = Math.round(sum_of_mortgage / (12 * Number(mortgage_time))).toLocaleString() + " руб.";
+    } 
+    else {
+        condition_value.innerHTML = 0 + " руб.";
+        result.innerHTML = 0 + " руб.";
+    }
+
+}
