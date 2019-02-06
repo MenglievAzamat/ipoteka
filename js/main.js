@@ -1,4 +1,4 @@
-function countMortgage() {
+/*function countMortgage() {
     let result;
     let price = $("#price").val();
     let payment = $("#payment").val();
@@ -62,7 +62,7 @@ $(document).ready(function () {
         answer.css("min-height", height).css("padding", padding).css("max-height", max);
         $(answer).find("p").css("opacity", opacity);
     });
-});
+}); */
 
 var accardion_item = document.getElementsByClassName('acc_input');
 var accardion_cross = document.getElementsByClassName('circle-plus');
