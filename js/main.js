@@ -67,10 +67,30 @@ $(document).ready(function () {
 var accardion_item = document.getElementsByClassName('acc_input');
 var accardion_cross = document.getElementsByClassName('circle-plus');
 var accardion = document.getElementsByClassName('ac-container')[0];
+var animated_progress = document.getElementsByClassName('animated_progress');
 
 window.onload = function () {
     accardion_cross[0].classList.add('opened');
+    progress_animation_activ();
 }
+
+function progress_animation_activ() {
+    var x = 0;
+    var timerId = setInterval(function() {
+        if(x < 4) {
+            for(var i = 0; i < animated_progress.length; i++) {
+                animated_progress[i].classList.remove('added_opacity');
+            }
+            animated_progress[x].classList.add('added_opacity');
+            x++;
+        }
+
+        else {
+            x = 0;
+        }
+      }, 700);
+}
+
 accardion.addEventListener('click', function () {
     for (var i = 0; i < accardion_item.length; i++) {
         if (accardion_item[i].checked) {

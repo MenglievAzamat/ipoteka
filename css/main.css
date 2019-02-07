@@ -1051,11 +1051,11 @@ footer .mobile {
     transform: matrix(0.91, 0.41, -0.41, 0.91, 0, 0);
     -ms-transform: matrix(0.91, 0.41, -0.41, 0.91, 0, 0);
     -webkit-transform: matrix(0.91, 0.41, -0.41, 0.91, 0, 0);
-    opacity: 1;
+    transition: all 0.7s ease;
 }
 
 .added_opacity {
-    opacity: 0;
+    opacity: 0.3;
 }
 
 
