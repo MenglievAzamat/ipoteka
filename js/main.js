@@ -76,19 +76,17 @@ window.onload = function () {
 
 function progress_animation_activ() {
     var x = 0;
-    var timerId = setInterval(function() {
-        if(x < 4) {
-            for(var i = 0; i < animated_progress.length; i++) {
+    var timerId = setInterval(function () {
+        if (x < animated_progress.length) {
+            for (var i = 0; i < animated_progress.length; i++) {
                 animated_progress[i].classList.remove('added_opacity');
             }
             animated_progress[x].classList.add('added_opacity');
             x++;
-        }
-
-        else {
+        } else {
             x = 0;
         }
-      }, 700);
+    }, 200);
 }
 
 accardion.addEventListener('click', function () {
@@ -159,13 +157,102 @@ function count() {
     var mortgage_time = mortgage.split(" ").join('');
 
     sum_of_mortgage = Number(price_to_count) - Number(payment_to_count);
-    if(Number(sum_of_mortgage) > 0 || Math.round(sum_of_mortgage / (12 * Number(mortgage_time))) > 0) {
+    if (Number(sum_of_mortgage) > 0 || Math.round(sum_of_mortgage / (12 * Number(mortgage_time))) > 0) {
         condition_value.innerHTML = sum_of_mortgage.toLocaleString() + " руб.";
         result.innerHTML = Math.round(sum_of_mortgage / (12 * Number(mortgage_time))).toLocaleString() + " руб.";
-    } 
-    else {
+    } else {
         condition_value.innerHTML = 0 + " руб.";
         result.innerHTML = 0 + " руб.";
     }
 
+}
+
+var quiz_container = document.getElementById('quiz');
+var quiz_itself = document.getElementsByClassName('quiz')[0];
+var quiz_counter = 0;
+var progress_dots = document.getElementsByClassName('dot');
+
+quiz_container.addEventListener('click', function (event) {
+    var target = event.target;
+    if (target.classList.contains('quiz_btn')) {
+        changeSlide()
+    }
+    else if(target.classList.contains('controls_back_btn')) {
+        quizGoesBack()
+    }
+});
+
+function changeSlide() {
+    if (quiz_counter <= quiz_itself.children.length) {
+        for (var i = 0; i < quiz_itself.children.length; i++) {
+            quiz_itself.children[i].classList.add('invisible_item');
+        }
+        quiz_itself.children[quiz_counter+1].classList.remove('invisible_item');
+        quiz_counter++;
+    }
+    activatedProgressDots();
+    createAnimatedProgress();
+    changeQuizTexts()
+}
+
+function activatedProgressDots() {
+    if(quiz_counter < 3) {
+        for(var i = 0; i < progress_dots.length; i++) {
+            progress_dots[i].classList.remove('active')
+        }
+        progress_dots[quiz_counter].classList.add('active')
+    }
+}
+
+function createAnimatedProgress() {    
+    for(var i = 0; i < 8; i++) {
+        var new_activ_progress = document.createElement('div');
+        new_activ_progress.classList.add('animated_progress');
+        document.getElementsByClassName('offer')[0].appendChild(new_activ_progress);
+    }   
+}
+
+function changeQuizTexts() {
+
+    if(quiz_counter==1) {
+        document.getElementsByClassName('step_counter')[0].innerHTML = "Шаг 2"
+        document.getElementsByClassName('offer_text')[0].innerHTML='50% вероятность одобрения заявки';
+        document.getElementsByClassName('offer_text')[0].style.fontWeight = '500'
+        document.getElementsByClassName('changing_step')[0].innerHTML = '2';
+    }
+    else if(quiz_counter==2) {
+        document.getElementsByClassName('step_counter')[0].innerHTML = "Шаг 3"
+        document.getElementsByClassName('offer_text')[0].innerHTML='92% вероятность одобрения заявки';
+        document.getElementsByClassName('offer_text')[0].style.fontWeight = '500'
+        document.getElementsByClassName('changing_step')[0].innerHTML = '3';
+    }
+    else if(quiz_counter==3) {
+        document.getElementsByClassName('offer_text')[0].style.position = 'static'
+        document.getElementsByClassName('quiz_info')[0].innerHTML = 'Ваша заявка принята'
+    }
+    else if(quiz_counter==0) {
+        document.getElementsByClassName('step_counter')[0].innerHTML = "Шаг 1"
+        document.getElementsByClassName('offer_text')[0].innerHTML='Получите +50% к вероятности одобрения заявки, заполнив 1-й шаг';
+        document.getElementsByClassName('changing_step')[0].innerHTML = '1';
+    }
+}
+
+function quizGoesBack() {
+    quiz_counter--;
+    if (quiz_counter >= 0) {
+        for (var i = 0; i < quiz_itself.children.length; i++) {
+            quiz_itself.children[i].classList.add('invisible_item');
+        }
+        quiz_itself.children[quiz_counter].classList.remove('invisible_item');
+    }
+    activatedProgressDots();
+    destroyAnimatedProgress();
+    changeQuizTexts()
+}
+
+function destroyAnimatedProgress() {
+    var parent = animated_progress[0].parentNode;
+    for(var i = 0; i < 8; i++) {
+        parent.removeChild(parent.lastChild)
+    }
 }

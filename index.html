@@ -64,64 +64,64 @@
                 <h1>Ипотечный <span>калькулятор</span></h1>
             </div>
             <div class="calc_section">
-                    <div class="param">
-                        <div class="param_item">
-                            <h3>Стоимость квартиры</h3>
-                            <div class="calc_line">
-                                <input class="count_input" type="text" id="price_id" name="price_id" value="" onchange="count()" />
-                            </div>
-                        </div>
-                        <div class="param_item">
-                            <h3>Первоначальный взнос</h3>
-                            <div class="calc_line">
-                                <input class="count_input" type="text" id="payment" name="payment" value="" onchange="count()" />
-                            </div>
-                        </div>
-                        <div class="param_item">
-                            <h3>Срок ипотеки</h3>
-                            <div class="calc_line">
-                                <input class="count_input" type="text" id="mortgage" name="mortgage" value="" onchange="count()" />
-                            </div>
+                <div class="param">
+                    <div class="param_item">
+                        <h3>Стоимость квартиры</h3>
+                        <div class="calc_line">
+                            <input class="count_input" type="text" id="price_id" name="price_id" value="" onchange="count()" />
                         </div>
                     </div>
-                    <div class="conditions">
-                        <div>
-                            <span class="condition_type">Процентная ставка</span>
-                            <span class="condition_value_percent">от 4.4%</span>
-                        </div>
-                        <div>
-                            <span class="condition_type">Сумма ипотеки</span>
-                            <span class="condition_value_sum">0</span>
-                        </div>
-                        <div class="result">
-                            <span class="result_text condition_type">Ежемесячный платёж</span>
-                            <span class="result_num_payment">0</span>
+                    <div class="param_item">
+                        <h3>Первоначальный взнос</h3>
+                        <div class="calc_line">
+                            <input class="count_input" type="text" id="payment" name="payment" value="" onchange="count()" />
                         </div>
                     </div>
-                    <div class="partners">
-                        <h3>Банки-партнеры</h3>
-                        <div class="partners_item">
-                            <img src="./img/sber.png" alt="">
-                        </div>
-                        <div class="partners_item">
-                            <img src="./img/vtb24.png" alt="">
-                        </div>
-                        <div class="partners_item partners_item__moved">
-                            <img src="./img/alfabank.png" alt="">
-                        </div>
-                        <div class="partners_item partners_item__moved">
-                            <img src="./img/uralsib.png" alt="">
-                        </div>
-                        <div class="partners_item partners_item__moved">
-                            <img src="./img/rayfayzen.png" alt="">
-                        </div>
-                        <div class="partners_item partners_item__moved">
-                            <img src="./img/otkrytiye.png" alt="">
+                    <div class="param_item">
+                        <h3>Срок ипотеки</h3>
+                        <div class="calc_line">
+                            <input class="count_input" type="text" id="mortgage" name="mortgage" value="" onchange="count()" />
                         </div>
                     </div>
                 </div>
+                <div class="conditions">
+                    <div>
+                        <span class="condition_type">Процентная ставка</span>
+                        <span class="condition_value_percent">от 4.4%</span>
+                    </div>
+                    <div>
+                        <span class="condition_type">Сумма ипотеки</span>
+                        <span class="condition_value_sum">0</span>
+                    </div>
+                    <div class="result">
+                        <span class="result_text condition_type">Ежемесячный платёж</span>
+                        <span class="result_num_payment">0</span>
+                    </div>
+                </div>
+                <div class="partners">
+                    <h3>Банки-партнеры</h3>
+                    <div class="partners_item">
+                        <img src="./img/sber.png" alt="">
+                    </div>
+                    <div class="partners_item">
+                        <img src="./img/vtb24.png" alt="">
+                    </div>
+                    <div class="partners_item partners_item__moved">
+                        <img src="./img/alfabank.png" alt="">
+                    </div>
+                    <div class="partners_item partners_item__moved">
+                        <img src="./img/uralsib.png" alt="">
+                    </div>
+                    <div class="partners_item partners_item__moved">
+                        <img src="./img/rayfayzen.png" alt="">
+                    </div>
+                    <div class="partners_item partners_item__moved">
+                        <img src="./img/otkrytiye.png" alt="">
+                    </div>
+                </div>
             </div>
-           <!-- <div class="content">
+        </div>
+        <!-- <div class="content">
                 <div class="sliders">
                     <h3>Стоимость квартиры</h3>
                     <div class="slider">
@@ -181,9 +181,9 @@
                 </div>
             </div> -->
 
-            <div class="button count_button">
-                <button class="btn">Получить расчет</button>
-            </div>
+        <div class="button count_button">
+            <button class="btn">Получить расчет</button>
+        </div>
         </div>
     </section>
 
@@ -303,36 +303,215 @@
             </div>
             <div class="content">
                 <div class="quiz_info">
-                    <p>Заполните контактную информацию (шаг 1 из 3)</p>
+                    <p>Заполните контактную информацию (шаг <span class="changing_step">1</span> из 3)</p>
                 </div>
-                <div class="offer">
+                <div class="offer" id="offer">
                     <div class="animated_progress"></div>
                     <div class="animated_progress"></div>
                     <div class="animated_progress"></div>
                     <div class="animated_progress"></div>
-                    <p>Получите <span>+50% к вероятности одобрения</span> заявки, заполнив <span>1-й шаг</span></p>
+                    <p class="offer_text">Получите <span>+50% к вероятности одобрения</span> заявки, заполнив <span>1-й шаг</span></p>
                 </div>
-                <div class="quiz">
-                    <div class="progress">
-                        <h3>Шаг 1</h3>
+                <div class="progress">
+                        <h3 class="step_counter">Шаг 1</h3>
                         <div class="dots">
-                            <div class="dot 1"></div>
+                            <div class="dot active 1"></div>
                             <div class="dot 2"></div>
                             <div class="dot 3"></div>
                         </div>
                     </div>
-                    <input type="text" id="fio" placeholder="Фамилия, имя и отчество">
-                    <div class="contacts">
-                        <input type="text" id="phone-no" placeholder="Введите номер телефона">
-                        <input type="text" id="e-mail" placeholder="Электронный адрес">
-                    </div>
-                    <hr>
-                    <div class="controls">
-                        <div class="checkbox_container">
-                            <input type="checkbox" id="policy">
-                            <label for="policy">Я принимаю <a href="">условия передачи информации</a></label>
+                <div class="quiz">
+                    <div class="quiz_step">
+                        <input type="text" id="fio" placeholder="Фамилия, имя и отчество">
+                        <div class="contacts">
+                            <input type="text" id="phone-no" placeholder="Введите номер телефона">
+                            <input type="text" id="e-mail" placeholder="Электронный адрес">
                         </div>
-                        <button class="btn" id="quiz_btn">Далее</button>
+                        <hr>
+                        <div class="controls">
+                            <div class="checkbox_container">
+                                <input type="checkbox" id="policy">
+                                <label for="policy">Я принимаю <a href="">условия передачи информации</a></label>
+                            </div>
+                            <button class="btn quiz_btn" id="quiz_btn">Далее</button>
+                        </div>
+                    </div>
+                    <div class="quiz_step invisible_item">
+                        <div class="contacts citizenship_info">
+                            <select name="" id="">
+                                <option value="citizen">Имею гражданство РФ</option>
+                                <option value="noncitizen">Не имею гражданство РФ</option>
+                            </select>
+                            <input type="text" id="country" placeholder="Укажите страну">
+                        </div>
+                        <div class="contacts pasport_info">
+                            <h3>Паспортные данные</h3>
+                            <input type="text" id="series" placeholder="Серия и номер">
+                            <input type="date" id="date_of_birth" placeholder="Дата рождения">
+                            <input type="text" id="place_of_birth" placeholder="Место рождения">
+                        </div>
+                        <div class="contacts registration_info">
+                            <h3>Адрес постоянной регистрации</h3>
+                            <input type="text" id="index" placeholder="Индекс">
+                            <select name="region" id="region">
+                                <option value="region" selected>Регион</option>
+                                <option value="">Алтайский край</option>
+                                <option value="">Амурская область</option>
+                                <option value="">Архангельская область</option>
+                                <option value="">Астраханская область</option>
+                                <option value="">Белгородская область</option>
+                                <option value="">Брянская область</option>
+                                <option value="">Владимирская область</option>
+                                <option value="">Волгоградская область</option>
+                                <option value="">Вологодская область</option>
+                                <option value="">Воронежская область</option>
+                                <option value="">г. Москва</option>
+                                <option value="">Еврейская автономная область</option>
+                                <option value="">Забайкальский край</option>
+                                <option value="">Ивановская область</option>
+                                <option value="">Иркутская область</option>
+                                <option value="">Кабардино-Балкарская Республика</option>
+                                <option value="">Калининградская область</option>
+                                <option value="">Калужская область</option>
+                                <option value="">Камчатский край</option>
+                                <option value="">Карачаево-Черкесская Республика</option>
+                                <option value="">Кемеровская область</option>
+                                <option value="">Кировская область</option>
+                                <option value="">Костромская область</option>
+                                <option value="">Краснодарский край</option>
+                                <option value="">Красноярский край</option>
+                                <option value="">Курганская область</option>
+                                <option value="">Курская область</option>
+                                <option value="">Ленинградская область</option>
+                                <option value="">Липецкая область</option>
+                                <option value="">Магаданская область</option>
+                                <option value="">Московская область</option>
+                                <option value="">Мурманская область</option>
+                                <option value="">Ненецкий автономный округ</option>
+                                <option value="">Нижегородская область</option>
+                                <option value="">Новгородская область</option>
+                                <option value="">Новосибирская область</option>
+                                <option value="">Омская область</option>
+                                <option value="">Оренбургская область</option>
+                                <option value="">Орловская область</option>
+                                <option value="">Пензенская область</option>
+                                <option value="">Пермский край</option>
+                                <option value="">Приморский край</option>
+                                <option value="">Псковская область</option>
+                                <option value="">Республика Адыгея (Адыгея)</option>
+                                <option value="">Республика Алтай</option>
+                                <option value="">Республика Башкортостан</option>
+                                <option value="">Республика Бурятия</option>
+                                <option value="">Республика Дагестан</option>
+                                <option value="">Республика Ингушетия</option>
+                                <option value="">Республика Калмыкия</option>
+                                <option value="">Республика Карелия</option>
+                                <option value="">Республика Коми</option>
+                                <option value="">Республика Крым</option>
+                                <option value="">Республика Марий Эл</option>
+                                <option value="">Республика Мордовия</option>
+                                <option value="">Республика Саха (Якутия)</option>
+                                <option value="">Республика Северная Осетия - Алания</option>
+                                <option value="">Республика Татарстан (Татарстан)</option>
+                                <option value="">Республика Тыва</option>
+                                <option value="">Республика Хакасия</option>
+                                <option value="">Ростовская область</option>
+                                <option value="">Рязанская область</option>
+                                <option value="">Самарская область</option>
+                                <option value="">Санкт-Петербург</option>
+                                <option value="">Саратовская область</option>
+                                <option value="">Сахалинская область</option>
+                                <option value="">Свердловская область</option>
+                                <option value="">Севастополь</option>
+                                <option value="">Смоленская область</option>
+                                <option value="">Ставропольский край</option>
+                                <option value="">Тамбовская область</option>
+                                <option value="">Тверская область</option>
+                                <option value="">Томская область</option>
+                                <option value="">Тульская область</option>
+                                <option value="">Тюменская область</option>
+                                <option value="">Удмуртская Республика</option>
+                                <option value="">Ульяновская область</option>
+                                <option value="">Хабаровский край</option>
+                                <option value="">Ханты-Мансийский автономный округ - Югра</option>
+                                <option value="">Челябинская область</option>
+                                <option value="">Чеченская Республика</option>
+                                <option value="">Чувашская Республика - Чувашия</option>
+                                <option value="">Чукотский автономный округ</option>
+                                <option value="">Ямало-Ненецкий автономный округ</option>
+                                <option value="">Ярославская область</option>
+                            </select>
+                        </div>
+                        <div class="contacts pasport_info">
+                            <h3>Адрес фактического проживания</h3>
+                            <div class="checkbox_container">
+                                <input type="checkbox" id="">
+                                <label for="">Совпадает с адресом регистрации</label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="controls">
+                            <button class="controls_back_btn">Назад</button>
+                            <button class="btn quiz_btn" id="quiz_btn">Далее</button>
+                        </div>
+                    </div>
+                    <div class="quiz_step invisible_item">
+                        <div class="contacts bought_target">
+                            <h3>Программа</h3>
+                            <select name="" id="">
+                                <option value="" selected disabled>Цель кредита</option>
+                                <option value="">Квартира</option>
+                                <option value="">Рефинансирование ипотеки</option>
+                                <option value="">Дом или таунхаус</option>
+                                <option value="">Кредит наличными под залог недвижимости</option>
+                                <option value="">Апартаменты</option>
+                                <option value="">Последняя доля/комната</option>
+                                <option value="">Москва</option>
+                            </select>
+                            <div class="checkbox_container">
+                                <input type="checkbox" id="">
+                                <label for="">Использование материнского капитала</label>
+                            </div>
+                        </div>
+                        <div class="contacts bought_target">
+                            <h3>Покупаемая недвижимость</h3>
+                            <div class="radio_block">
+                                <label for="">Новостройка</label>
+                                <input type="radio" name="type_of_apartment" id="">
+
+                            </div>
+                            <div class="radio_block">
+                                <label for="">Вторичный рынок</label>
+                                <input type="radio" name="type_of_apartment" id="">
+
+                            </div>
+                            <input type="text" class="bought_target__b_input" id="city" placeholder="Город">
+                            <input type="text" class="bought_target__b_input" id="" placeholder="Примерная стоимость объекта, ₽">
+                            <input type="text" id="" placeholder="Первоначальный взнос, ₽">
+                            <input type="text" class="bought_target__s_input" id="" placeholder="Сумма кредита, ₽">
+                        </div>
+                        <div class="contacts bought_target">
+                            <h3>Финансы</h3>
+                            <select name="" id="">
+                                <option value="" selected disabled>Тип занятости</option>
+                                <option value="">По найму</option>
+                                <option value="">Индивидуальный предприниматель</option>
+                                <option value="">Владелец бизнеса</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="controls">
+                            <button class="controls_back_btn">Назад</button>
+                            <button class="btn quiz_btn" id="quiz_btn">Оформить</button>
+                        </div>
+                    </div>
+                    <div class="quiz_step_finish invisible_item">
+                        <div class="quiz_step_finish__img_conatiner">
+                            <svg enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+                                <path fill="#00b4f7" d="m504.5 75.496c-9.997-9.998-26.205-9.998-36.204 0l-306.7 306.71-117.89-117.89c-9.997-9.998-26.205-9.997-36.204 0-9.998 9.997-9.998 26.205 0 36.203l135.99 135.99c9.994 9.997 26.214 9.99 36.204 0l324.81-324.81c9.998-9.997 9.997-26.206 0-36.204z" />
+                            </svg>
+                        </div>
+                        <p>Ваша заявка принята, ожидайте уведомления</p>
                     </div>
                 </div>
             </div>
@@ -481,7 +660,10 @@
                             </div>
                         </label>
                         <article>
-                            <p>Ипотека — одна из форм залога, при которой закладываемое недвижимое имущество остаётся во владении и пользовании должника, а кредитор, в случае невыполнения последним своего обязательства, приобретает право получить удовлетворение за счёт реализации данного имущества.</p>
+                            <p>Ипотека — одна из форм залога, при которой закладываемое недвижимое имущество остаётся
+                                во владении и пользовании должника, а кредитор, в случае невыполнения последним своего
+                                обязательства, приобретает право получить удовлетворение за счёт реализации данного
+                                имущества.</p>
                         </article>
                     </div>
                     <div>
@@ -495,7 +677,10 @@
                             </div>
                         </label>
                         <article>
-                            <p>Ипотека — одна из форм залога, при которой закладываемое недвижимое имущество остаётся во владении и пользовании должника, а кредитор, в случае невыполнения последним своего обязательства, приобретает право получить удовлетворение за счёт реализации данного имущества. </p>
+                            <p>Ипотека — одна из форм залога, при которой закладываемое недвижимое имущество остаётся
+                                во владении и пользовании должника, а кредитор, в случае невыполнения последним своего
+                                обязательства, приобретает право получить удовлетворение за счёт реализации данного
+                                имущества. </p>
                         </article>
                     </div>
                     <div>
@@ -509,7 +694,10 @@
                             </div>
                         </label>
                         <article>
-                            <p>Ипотека — одна из форм залога, при которой закладываемое недвижимое имущество остаётся во владении и пользовании должника, а кредитор, в случае невыполнения последним своего обязательства, приобретает право получить удовлетворение за счёт реализации данного имущества. </p>
+                            <p>Ипотека — одна из форм залога, при которой закладываемое недвижимое имущество остаётся
+                                во владении и пользовании должника, а кредитор, в случае невыполнения последним своего
+                                обязательства, приобретает право получить удовлетворение за счёт реализации данного
+                                имущества. </p>
                         </article>
                     </div>
                     <div>
@@ -523,7 +711,10 @@
                             </div>
                         </label>
                         <article>
-                            <p>Ипотека — одна из форм залога, при которой закладываемое недвижимое имущество остаётся во владении и пользовании должника, а кредитор, в случае невыполнения последним своего обязательства, приобретает право получить удовлетворение за счёт реализации данного имущества.</p>
+                            <p>Ипотека — одна из форм залога, при которой закладываемое недвижимое имущество остаётся
+                                во владении и пользовании должника, а кредитор, в случае невыполнения последним своего
+                                обязательства, приобретает право получить удовлетворение за счёт реализации данного
+                                имущества.</p>
                         </article>
                     </div>
                     <div>
