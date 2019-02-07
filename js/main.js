@@ -256,3 +256,21 @@ function destroyAnimatedProgress() {
         parent.removeChild(parent.lastChild)
     }
 }
+
+var menu__icon = document.getElementsByClassName('menu__icon')[0];
+var hidden_menu = document.getElementsByClassName('hidden_menu')[0];
+var overlay = document.getElementsByClassName('overlay')[0];
+
+menu__icon.addEventListener('click', menu_open);
+
+function menu_open() {
+    hidden_menu.classList.toggle('invisible_item');
+    overlay.classList.toggle('invisible_item');
+    document.documentElement.classList.toggle('no_scroll');
+}
+
+var header_burger_menu = document.getElementsByClassName("menu")[0];
+
+menu__icon.addEventListener('click', function () {
+    header_burger_menu.classList.toggle('menu_state_open');
+})

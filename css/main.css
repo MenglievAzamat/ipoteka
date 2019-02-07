@@ -195,6 +195,7 @@ input[type=range]:focus::-ms-fill-upper {
 /* Header Section */
 /******************/
 header {
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
 }
@@ -231,26 +232,8 @@ header .logo {
 header nav {
     align-items: center;
     display: flex;
-    padding-left: 1rem;
 }
 
-header nav ul {
-    display: flex;
-    align-items: center;
-}
-
-header nav li {
-    cursor: pointer;
-    font-size: 0.9375rem;
-    color: #ffffff;
-    margin-right: 2.0625rem;
-}
-
-header nav li a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9375rem;
-}
 
 header .contact {
     width: 14rem;
@@ -330,11 +313,24 @@ footer .copyright {
     background-position-y: -11rem;
     background-repeat: no-repeat;
     padding: 8.1875rem 6rem;
+    position: relative;
+}
+
+.head_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    opacity: 0.4;
+    display: none;
 }
 
 #head .container {
     height: 31rem;
     width: 44rem;
+    position: relative;
 }
 
 #head h1 {
@@ -404,6 +400,13 @@ footer .copyright {
 
 footer .mobile {
     display: none;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+}
+
+.mobile .phone a {
+    color: #ffffff;
+    text-decoration: unset;
 }
 
 #contacts iframe {
@@ -607,6 +610,12 @@ footer .mobile {
     padding: 1rem;
 }
 
+.calc_wrap {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .count_button {
     margin: 3.5rem auto 0;
 }
@@ -653,7 +662,7 @@ footer .mobile {
 .param {
     position: relative;
     padding: 1.56rem 4.25rem 0rem 1.875rem;
-    width: 50%;
+    width: 65%;
     margin-bottom: 1rem;
 }
 
@@ -1179,6 +1188,7 @@ footer .mobile {
 #quiz .contacts {
     margin-top: 1.4rem;
     display: flex;
+    flex-wrap: wrap;
 }
 
 #quiz .contacts input:nth-of-type(1) {
@@ -1516,7 +1526,7 @@ footer .mobile {
 }
 
 .ac-container input:checked~article {
-    height: 6rem;
+    height: fit-content;
 
 
     -o-transition: all 0.5s ease;
@@ -1578,7 +1588,7 @@ footer .mobile {
     left: 95%;
     margin-left: -0.15625rem;
     top: 50%;
-    margin-top: -4px;
+    margin-top: -0.25rem;
 }
 
 .circle-plus .circle .vertical {
@@ -1593,282 +1603,1511 @@ footer .mobile {
     margin-top: -0.9375rem;
 }
 
+header {
+    width: 100%;
+    z-index: 1000;
+    position: relative;
+}
+
+header nav {
+    display: none;
+    width: 100%;
+    background-color: #0DB8F7;
+    box-shadow: 0rem 0.375rem 1.3125rem rg
+}
+
+.menu_buttons {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu__icon {
+    width: 2.25rem;
+    position: relative;
+    cursor: pointer;
+    margin-top: -1rem;
+}
+
+.menu__icon span {
+    display: block;
+    position: absolute;
+    height: 0.166rem;
+    width: 100%;
+    background: #ffffff;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.menu__icon span:nth-child(1) {
+    top: 0rem;
+}
+
+.menu__icon span:nth-child(2),
+.menu__icon span:nth-child(3) {
+    top: 0.66rem;
+}
+
+.menu__icon span:nth-child(4) {
+    top: 1.33rem;
+}
+
+.menu.menu_state_open .menu__icon span:nth-child(1) {
+    top: 1rem;
+    width: 0%;
+    left: 50%;
+}
+
+.menu.menu_state_open .menu__icon span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.menu.menu_state_open .menu__icon span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.menu.menu_state_open .menu__icon span:nth-child(4) {
+    top: 1rem;
+    width: 0%;
+    left: 50%;
+}
+
+.menu_bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    position: relative;
+    box-shadow: 0rem 0.3125rem 1.6875rem rgba(0, 0, 0, 0.2);
+}
+
+.hidden_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4.5rem 1rem;
+}
+
+.hidden_menu a {
+    text-decoration: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #00B4F7;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.hidden_menu svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+}
+
+.hidden_menu_item li {
+    margin-bottom: 0.5rem;
+}
+
+.hidden_menu_item:nth-of-type(1) ul {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #00B4F7;
+    font-weight: bold;
+}
+
+.hidden_menu_item:nth-of-type(2) ul {
+    cursor: pointer;
+    font-size: 0.9375rem;
+    color: #333333;
+    text-align: right;
+}
+
+.hidden_menu_item {
+    width: 50%;
+    display: flex;
+}
+
+.hidden_menu_item:nth-of-type(1) {
+    justify-content: flex-start;
+}
+
+.hidden_menu_item:nth-of-type(2) {
+    justify-content: flex-end;
+}
+
+.hidden_menu_item .header_item:nth-of-type(1) {
+    height: 5.5625rem;
+    background-color: #00b4f7;
+    padding: 1.0625rem 6rem;
+    justify-content: space-between
+}
+
+.hidden_menu_item .header_item:nth-of-type(2) {
+    padding: 0.625rem 6rem 0.625rem 6.1rem;
+}
+
+.header_item {
+    width: 100%;
+    display: flex;
+}
+
+.header_item:nth-of-type(1) {
+    height: 5.5625rem;
+    background-color: #00b4f7;
+    padding: 1.0625rem 6rem;
+    justify-content: space-between
+}
+
+.header_item:nth-of-type(2) {
+    padding: 0.625rem 6rem 0.625rem 6.1rem;
+}
+
+.header_logo {
+    background-image: url(../img/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 3.1875rem;
+    width: 12rem;
+}
+
+.header_nav {
+    align-items: center;
+    display: flex;
+}
+
+.header_nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_nav li {
+    cursor: pointer;
+    font-size: 0.9375rem;
+    color: #ffffff;
+    margin-right: 2.0625rem;
+}
+
+.header_contacts {
+    padding-top: 0.3rem;
+}
+
+.header_contacts a {
+    text-decoration: unset;
+    font-size: 0.9375rem;
+    color: #ffffff;
+    text-align: right;
+    position: relative;
+}
+
+.tel_comment {
+    position: absolute;
+    font-size: 0.75rem;
+    color: #ffffff;
+    text-decoration: underline;
+    right: 0;
+    bottom: -1rem;
+}
+
+.header_small_nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.header_small_nav li {
+    cursor: pointer;
+    font-size: 0.8125rem;
+    color: #00b4f7;
+    margin-right: 3.125rem;
+}
+
+.overlay {
+    z-index: 900;
+    position: fixed;
+    top: 0rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000000;
+    opacity: 0.7;
+
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.no_scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
 
 /* MOBILE VERSION */
-@media screen and (min-device-width: 100px) and (max-device-width: 475px) {
-    html {
-        font-size: 24px;
-    }
 
-    section h1 {
-        font-size: 3.5rem;
-    }
+@media screen and (min-width: 320px) and (max-width: 375px) {
 
-    section .container h1 {
-        text-align: center;
-    }
-
-    header {
-        padding: 0.5rem;
-    }
-
-    header .normal {
-        display: none;
-    }
-
-    header .mobile {
-        display: block;
-    }
-
-    header .logo {
-        width: 21rem;
-        height: 6.1875rem;
-    }
-
-    header .mobile span {
-        color: white;
-        float: right;
-        font-size: 6rem;
-        margin-top: -6.6rem;
-        margin-right: 1rem;
-        cursor: pointer;
-    }
-
-    .btn {
-        font-size: 2.5rem;
-        padding: 3.2rem;
-        width: 36rem;
-    }
-
-    #head {
-        padding: 19rem 2rem 0;
-        background-size: 146rem;
-        background-position-x: -43rem;
-        background-position-y: -18rem;
-        min-height: 78rem;
-        background-color: grey;
-        background-blend-mode: multiply;
-    }
-
-    #head h1 {
-        text-align: left;
-    }
-
-    #head p {
-        font-size: 2.6rem;
-        color: white;
-    }
-
-
-    #head p span {
-        color: white;
-    }
-
-    #head h1 {
-        color: #fff;
+    html,
+    body {
+        font-size: 12px
     }
 
     #head .container {
-        width: auto;
+        width: unset;
     }
 
-    #calculator .button {
-        width: 36rem;
+    .header_item {
+        display: none;
     }
 
-    #calculator .content {
+    header nav {
         display: block;
-        padding: 0 4rem;
     }
 
-    #calculator .sliders,
-    #calculator .results,
-    #calculator .partners {
-        width: auto;
+    #head {
+        padding: 8.1875rem 1rem;
+    }
+
+    #head h1 {
+        font-size: 2.3rem;
+        color: #ffffff;
+    }
+
+    #head p,
+    #head p span {
+        color: #ffffff;
+    }
+
+    #head {
+        background-position: center;
+    }
+
+    .head_wrap {
+        display: block;
+    }
+
+    .btn {
+        font-size: 1.3rem;
+    }
+
+    #calculator,
+    #programs,
+    #profits,
+    #faq {
+        padding: 6.1875rem 1rem;
+    }
+
+    .param {
+        padding: 2rem 0.3rem 0;
+    }
+
+    .calc_section {
         padding: 0;
+        flex-direction: column-reverse;
     }
 
-    #calculator .button {
-        margin-top: 6rem;
+    .partners {
+        width: 100%;
     }
 
-    #programs .row,
+    .partners_item {
+        width: 33.3%;
+    }
+
+    .partners_item__moved {
+        margin: 0;
+    }
+
+    .partners h3 {
+        margin-bottom: 1rem;
+    }
+
+    .calc_wrap,
+    .param,
+    .conditions {
+        width: 100%;
+    }
+
+    .conditions div {
+        display: flex;
+        align-items: center;
+    }
+
+    .condition_type {
+        width: unset;
+        display: unset;
+        font-size: 1.3rem;
+    }
+
+    .condition_type::after {
+        display: none;
+    }
+
+    .condition_value_percent,
+    .condition_value_sum,
+    .result_num_payment {
+        margin-left: 2rem;
+    }
+
+    #programs .row {
+        flex-direction: column;
+    }
+
     #programs .row:nth-of-type(1) {
-        margin-bottom: 0;
-        height: unset;
-        display: block;
-    }
-
-    #programs .content {
-        padding: 0 2rem;
+        margin: 0;
     }
 
     #programs .element {
-        width: unset;
-        margin-right: 0;
-        margin-bottom: 2rem;
+        width: 100%;
+        margin: 1rem 0;
     }
 
-    #programs .container {
-        height: auto;
-        padding-bottom: 1rem;
+    #quiz {
+        padding: 8.125rem 0rem;
     }
 
-    #quiz h3 {
-        width: unset;
-        margin-left: 0;
-        text-align: center;
+    #quiz .heading {
+        padding: 0 1rem 3.75rem;
     }
 
-    #quiz .content {
-        width: auto;
-    }
-
+    #quiz .content,
     #quiz .quiz_info {
-        padding: 0;
+        width: 100%;
+        border-radius: 0rem;
+        border: unset;
+    }
+
+    #quiz .progress {
+        padding: 2.375rem 1rem 0;
     }
 
     #quiz .quiz {
-        width: auto;
-        padding: 2rem 1rem;
+        padding: 0 1rem 2.375rem;
     }
 
-    input[type="text"] {
-        width: 38.7rem;
+    #quiz .contacts input,
+    #quiz .contacts select,
+    #quiz .controls button {
+        width: 100%;
+        margin: 0 0 1rem !important;
     }
 
-    #quiz hr {
-        margin-left: 0;
-        width: auto;
+    hr {
+        display: none;
     }
 
-    #profits {
-        height: 106rem;
+    #quiz .controls {
+        flex-direction: column-reverse;
+        padding-top: 2.1875rem;
+    }
+
+    #profits .column {
+        width: 100%;
     }
 
     #profits .content {
-        display: block;
-        padding: 0 3rem;
+        flex-direction: column;
     }
 
-    #profits .column,
-    #profits .column:nth-of-type(1) {
-        margin-right: 0;
-        width: auto;
-        height: auto;
+    .circle-plus .circle .vertical {
+        left: 96.7%;
     }
 
-    #profits .element {
-        height: auto;
-        margin-bottom: 0;
+    #contacts {
+        flex-direction: column-reverse;
+        display: flex;
     }
-
-    #profits .element h3 {
-        font-size: 1.5rem;
-    }
-
-    #profits .element p {
-        font-size: 1.5rem;
-    }
-
-    #faq .heading {
-        padding: 0;
-        width: auto;
-    }
-
-    #faq h1 {
-        font-size: 3.2rem;
-    }
-
-    #faq .content {
-        padding: 0;
-    }
-
-    #faq .answer {}
 
     #contacts .contact_info {
-        margin-top: -33.5rem;
-        margin-left: 8rem;
+        position: static;
+        margin: 1rem auto 4rem;
+        box-shadow: unset;
+        border: 0.33333rem solid #00b4f7;
+        width: 95%;
+        padding: 2rem 1.5rem
+    }
+
+    #contacts .btn {
+        width: 100%;
     }
 
     footer .normal {
         display: none;
     }
 
-    footer .logo {
-        width: 50%;
-        height: 4.5625rem;
+    footer .mobile {
+        display: flex;
     }
 
-    footer .phone {
-        width: 50%;
+    footer .logo {
+        margin: 0;
+    }
+
+    #quiz .animated_progress:nth-of-type(1) {
+        left: 2%;
+    }
+
+    .irs-line-right {
+        height: 16px;
+        background-position: 25px -3px;
+    }
+
+    .irs-line-left {
+        display: none;
+    }
+
+    .irs-line-mid {
+        left: 6%;
+        width: 100%;
+    }
+
+    .irs-bar {
+        height: 12px;
+        top: 33px;
+        background-position: -19px -54px;
+    }
+
+    .irs-slider {
+        background-position: -1px -81px !important;
+        width: 29px;
+        height: 38px;
+    }
+
+    .irs-slider:hover {
+        background-position: -1px -81px !important;
+        width: 29px;
+        height: 38px;
+    }
+
+    .irs-bar-edge {
+        top: 32px;
+        width: 26px;
+        height: 14px;
+        background-position: 35px -53px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+
+    html,
+    body {
+        font-size: 13px
+    }
+
+    #head .container {
+        width: unset;
+    }
+
+    .header_item {
+        display: none;
+    }
+
+    header nav {
+        display: block;
+    }
+
+    #head {
+        padding: 8.1875rem 1rem;
+    }
+
+    #head h1 {
+        font-size: 2.3rem;
+        color: #ffffff;
+    }
+
+    #head p,
+    #head p span {
+        color: #ffffff;
+    }
+
+    #head {
+        background-position: center;
+    }
+
+    .head_wrap {
+        display: block;
+    }
+
+    .btn {
+        font-size: 1.3rem;
+    }
+
+    #calculator,
+    #programs,
+    #profits,
+    #faq {
+        padding: 6.1875rem 1rem;
+    }
+
+    .param {
+        padding: 2rem 0.3rem 0;
+    }
+
+    .calc_section {
+        padding: 0;
+        flex-direction: column-reverse;
+    }
+
+    .partners {
+        width: 100%;
+    }
+
+    .partners_item {
+        width: 33.3%;
+    }
+
+    .partners_item__moved {
+        margin: 0;
+    }
+
+    .partners h3 {
+        margin-bottom: 1rem;
+    }
+
+    .calc_wrap,
+    .param,
+    .conditions {
+        width: 100%;
+    }
+
+    .conditions div {
+        display: flex;
+        align-items: center;
+    }
+
+    .condition_type {
+        width: unset;
+        display: unset;
+        font-size: 1.3rem;
+    }
+
+    .condition_type::after {
+        display: none;
+    }
+
+    .condition_value_percent,
+    .condition_value_sum,
+    .result_num_payment {
+        margin-left: 2rem;
+    }
+
+    #programs .row {
+        flex-direction: column;
+    }
+
+    #programs .row:nth-of-type(1) {
+        margin: 0;
+    }
+
+    #programs .element {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    #quiz {
+        padding: 8.125rem 0rem;
+    }
+
+    #quiz .heading {
+        padding: 0 1rem 3.75rem;
+    }
+
+    #quiz .content,
+    #quiz .quiz_info {
+        width: 100%;
+        border-radius: 0rem;
+        border: unset;
+    }
+
+    #quiz .progress {
+        padding: 2.375rem 1rem 0;
+    }
+
+    #quiz .quiz {
+        padding: 0 1rem 2.375rem;
+    }
+
+    #quiz .contacts input,
+    #quiz .contacts select,
+    #quiz .controls button {
+        width: 100%;
+        margin: 0 0 1rem !important;
+    }
+
+    hr {
+        display: none;
+    }
+
+    #quiz .controls {
+        flex-direction: column-reverse;
+        padding-top: 2.1875rem;
+    }
+
+    #profits .column {
+        width: 100%;
+    }
+
+    #profits .content {
+        flex-direction: column;
+    }
+
+    .circle-plus .circle .vertical {
+        left: 96.6%;
+    }
+
+    #contacts {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+
+    #contacts .contact_info {
+        position: static;
+        margin: 1rem auto 4rem;
+        box-shadow: unset;
+        border: 0.33333rem solid #00b4f7;
+        width: 95%;
+        padding: 2rem 1.5rem
+    }
+
+    #contacts .btn {
+        width: 100%;
+    }
+
+    footer .normal {
+        display: none;
     }
 
     footer .mobile {
         display: flex;
-        height: 10rem;
-        padding: 3rem 1rem;
     }
 
-    footer a {
-        float: right;
-        font-size: 1.4rem;
-        text-align: right;
-        text-decoration: none;
-        color: white;
-    }
-
-    footer a span.modal_trigger {
-        font-size: 1rem;
-    }
-
-    #quiz .offer {
-        text-align: center;
-        padding: 1rem;
-    }
-
-    #quiz .quiz_info {
-        padding: 2rem;
-    }
-
-    #quiz .quiz_info p {
+    footer .logo {
         margin: 0;
-        font-size: 1.4rem;
+    }
+
+    #quiz .animated_progress:nth-of-type(1) {
+        left: 2%;
+    }
+
+    .irs-line-right {
+        height: 16px;
+        background-position: 25px -3px;
+    }
+
+    .irs-line-left {
+        display: none;
+    }
+
+    .irs-line-mid {
+        left: 6%;
+        width: 100%;
+    }
+
+    .irs-bar {
+        height: 12px;
+        top: 36px;
+        background-position: -19px -54px;
+    }
+
+    .irs-slider {
+        background-position: -1px -81px !important;
+        width: 29px;
+        height: 38px;
+    }
+
+    .irs-slider:hover {
+        background-position: -1px -81px !important;
+        width: 29px;
+        height: 38px;
+    }
+
+    .irs-bar-edge {
+        top: 35px;
+        width: 26px;
+        height: 14px;
+        background-position: 35px -53px;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 580px) {
+
+    html,
+    body {
+        font-size: 13px
+    }
+
+    #head .container {
+        width: unset;
+    }
+
+    .header_item {
+        display: none;
+    }
+
+    header nav {
+        display: block;
+    }
+
+    #head {
+        padding: 8.1875rem 2rem;
+    }
+
+    #head h1 {
+        font-size: 2.3rem;
+        color: #ffffff;
+    }
+
+    #head p,
+    #head p span {
+        color: #ffffff;
+    }
+
+    #head {
+        background-position: center;
+    }
+
+    .head_wrap {
+        display: block;
+    }
+
+    .btn {
+        font-size: 1.3rem;
+    }
+
+    .menu_bar {
+        padding: 1.5rem 2rem
+    }
+
+    .hidden_menu {
+        padding: 4.5rem 2rem;
+    }
+
+    #calculator,
+    #programs,
+    #profits,
+    #faq {
+        padding: 6.1875rem 2rem;
+    }
+
+    .param {
+        padding: 2rem 1rem 0;
+    }
+
+    .calc_section {
+        padding: 0;
+        flex-direction: column-reverse;
+    }
+
+    .partners {
+        width: 100%;
+    }
+
+    .partners_item {
+        width: 33.3%;
+        height: 11.875rem;
+    }
+
+    .partners_item__moved {
+        margin: 0;
+    }
+
+    .partners h3 {
+        margin-bottom: 1rem;
+    }
+
+    .calc_wrap,
+    .param,
+    .conditions {
+        width: 100%;
+    }
+
+    .conditions div {
+        display: flex;
+        align-items: center;
+    }
+
+    .condition_type {
+        width: unset;
+        display: unset;
+        font-size: 1.3rem;
+    }
+
+    .condition_type::after {
+        display: none;
+    }
+
+    .condition_value_percent,
+    .condition_value_sum,
+    .result_num_payment {
+        margin-left: 2rem;
+    }
+
+    #programs .row {
+        flex-direction: column;
+    }
+
+    #programs .row:nth-of-type(1) {
+        margin: 0;
+    }
+
+    #programs .element {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    #quiz {
+        padding: 8.125rem 0rem;
+    }
+
+    #quiz .heading {
+        padding: 0 1rem 3.75rem;
+    }
+
+    #quiz .content,
+    #quiz .quiz_info {
+        width: 100%;
+        border-radius: 0rem;
+        border: unset;
     }
 
     #quiz .progress {
-        display: block;
+        padding: 2.375rem 2rem 0;
     }
 
-    #quiz .contacts {
-        display: block;
+    #quiz .quiz {
+        padding: 0 2rem 2.375rem;
     }
 
-    #quiz .contacts input {
-        width: 38.7rem;
+    #quiz .contacts input,
+    #quiz .contacts select,
+    #quiz .controls button {
+        width: 100%;
+        margin: 0 0 1rem !important;
     }
 
-    #quiz .contacts input:nth-of-type(2) {
-        margin-top: 1.4rem;
-    }
-
-    input[type="text"] {
-        font-size: 2rem;
+    hr {
+        display: none;
     }
 
     #quiz .controls {
+        flex-direction: column-reverse;
+        padding-top: 2.1875rem;
+    }
+
+    #profits .column {
+        width: 100%;
+    }
+
+    #profits .content {
+        flex-direction: column;
+    }
+
+    .circle-plus .circle .vertical {
+        left: 96%;
+    }
+
+    #contacts {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+
+    #contacts .contact_info {
+        position: static;
+        margin: 1rem auto 4rem;
+        box-shadow: unset;
+        border: 0.33333rem solid #00b4f7;
+        width: 95%;
+        padding: 3rem 2.5rem
+    }
+
+    #contacts .btn {
+        width: 100%;
+    }
+
+    footer .normal {
+        display: none;
+    }
+
+    footer .mobile {
+        display: flex;
+    }
+
+    footer .logo {
+        margin: 0;
+    }
+
+    #quiz .animated_progress:nth-of-type(1) {
+        left: 2%;
+    }
+
+    footer .mobile {
+        padding: 2rem;
+    }
+
+    .irs-line-right {
+        height: 16px;
+        background-position: 25px -3px;
+    }
+
+    .irs-line-left {
+        display: none;
+    }
+
+    .irs-line-mid {
+        left: 6%;
+        width: 100%;
+    }
+
+    .irs-bar {
+        height: 12px;
+        top: 36px;
+        background-position: -19px -54px;
+    }
+
+    .irs-slider {
+        background-position: -1px -81px !important;
+        width: 29px;
+        height: 38px;
+    }
+
+    .irs-slider:hover {
+        background-position: -1px -81px !important;
+        width: 29px;
+        height: 38px;
+    }
+
+    .irs-bar-edge {
+        top: 35px;
+        width: 26px;
+        height: 14px;
+        background-position: 35px -53px;
+    }
+}
+
+@media screen and (min-width: 581px) and (max-width: 768px) {
+
+    html,
+    body {
+        font-size: 14px
+    }
+
+    #head .container {
+        width: unset;
+    }
+
+    .header_item {
+        display: none;
+    }
+
+    header nav {
         display: block;
     }
 
-    #quiz .controls label {
-        font-size: 1.5rem;
+    #head {
+        padding: 8.1875rem 2rem;
     }
 
+    #head h1 {
+        font-size: 2.3rem;
+        color: #ffffff;
+    }
+
+    #head p,
+    #head p span {
+        color: #ffffff;
+    }
+
+    #head {
+        background-position: center;
+    }
+
+    .head_wrap {
+        display: block;
+    }
+
+    .btn {
+        font-size: 1.3rem;
+    }
+
+    .menu_bar {
+        padding: 1.5rem 2rem
+    }
+
+    .hidden_menu {
+        padding: 4.5rem 2rem;
+    }
+
+    #calculator,
+    #programs,
+    #profits,
+    #faq {
+        padding: 6.1875rem 2rem;
+    }
+
+    .param {
+        padding: 2rem 1rem 0;
+    }
+
+    .calc_section {
+        padding: 0;
+        flex-direction: column-reverse;
+    }
+
+    .partners {
+        width: 100%;
+    }
+
+    .partners_item {
+        width: 25%;
+        height: 11.875rem;
+    }
+
+    .partners_item__moved {
+        margin: 0;
+    }
+
+    .partners h3 {
+        margin-bottom: 1rem;
+    }
+
+    .calc_wrap {
+        width: 100%;
+    }
+
+    .param,
+    .conditions {
+        width: 50%;
+    }
+
+    .conditions {
+        padding-top: 2.6rem;
+    }
+
+    .conditions div {
+        text-align: center;
+    }
+
+    .condition_type {
+        font-size: 1.3rem;
+    }
+
+    .condition_type::after {
+        display: none;
+    }
+
+    .condition_value_percent,
+    .condition_value_sum,
+    .result_num_payment {
+        margin-left: 2rem;
+    }
+
+    #programs .row {
+        flex-direction: column;
+    }
+
+    #programs .row:nth-of-type(1) {
+        margin: 0;
+    }
+
+    #programs .element {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    #quiz {
+        padding: 8.125rem 0rem;
+    }
+
+    #quiz .heading {
+        padding: 0 1rem 3.75rem;
+    }
+
+    #quiz .content,
+    #quiz .quiz_info {
+        width: 100%;
+        border-radius: 0rem;
+        border: unset;
+    }
+
+    #quiz .progress {
+        padding: 2.375rem 2rem 0;
+    }
+
+    #quiz .quiz {
+        padding: 0 2rem 2.375rem;
+    }
+
+    #quiz .contacts input,
+    #quiz .contacts select,
     #quiz .controls button {
-        margin: 1rem;
+        width: 100%;
+        margin: 0 0 1rem !important;
     }
 
-    #faq h3 {
-        width: 33rem;
+    hr {
+        display: none;
+    }
+
+    #quiz .controls {
+        flex-direction: column-reverse;
+        padding-top: 2.1875rem;
+    }
+
+    #profits .column {
+        width: 50%;
+    }
+
+    .circle-plus .circle .vertical {
+        left: 95.83%;
+    }
+
+    footer .normal {
+        display: none;
+    }
+
+    footer .mobile {
+        display: flex;
+    }
+
+    footer .logo {
+        margin: 0;
+    }
+
+    #quiz .animated_progress:nth-of-type(1) {
+        left: 2%;
+    }
+
+    footer .mobile {
+        padding: 2rem;
+    }
+
+    .irs-line-right {
+        height: 16px;
+        background-position: 25px -3px;
+    }
+
+    .irs-line-left {
+        display: none;
+    }
+
+    .irs-line-mid {
+        left: 6%;
+        width: 100%;
+    }
+
+    .irs-bar {
+        height: 12px;
+        top: 39px;
+        background-position: -19px -54px;
+    }
+
+    .irs-slider {
+        background-position: -1px -75px !important;
+        width: 29px;
+        height: 38px;
+    }
+
+    .irs-slider:hover {
+        background-position: -1px -81px !important;
+        width: 29px;
+        height: 38px;
+    }
+
+    .irs-bar-edge {
+        top: 38px;
+        width: 26px;
+        height: 14px;
+        background-position: 35px -53px;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 900px) {
+
+    html,
+    body {
+        font-size: 14px
+    }
+
+    #head .container {
+        width: unset;
+    }
+
+    .header_item {
+        display: none;
+    }
+
+    header nav {
+        display: block;
+    }
+
+    #head {
+        padding: 8.1875rem 5rem;
+    }
+
+    #head h1 {
+        font-size: 2.3rem;
+        color: #ffffff;
+    }
+
+    #head p,
+    #head p span {
+        color: #ffffff;
+    }
+
+    #head {
+        background-position: center;
+    }
+
+    .head_wrap {
+        display: block;
+    }
+
+    .btn {
+        font-size: 1.3rem;
+    }
+
+    .menu_bar {
+        padding: 1.5rem 5rem
+    }
+
+    .hidden_menu {
+        padding: 4.5rem 5rem;
+    }
+
+    #calculator,
+    #programs,
+    #profits,
+    #faq {
+        padding: 6.1875rem 5rem;
+    }
+
+    .param {
+        padding: 2rem 1rem 0;
+    }
+
+    .calc_section {
+        padding: 0;
+        flex-direction: column-reverse;
+    }
+
+    .partners {
+        width: 100%;
+    }
+
+    .partners_item {
+        width: 25%;
+        height: 11.875rem;
+    }
+
+    .partners_item__moved {
+        margin: 0;
+    }
+
+    .partners h3 {
+        margin-bottom: 1rem;
+    }
+
+    .calc_wrap {
+        width: 100%;
+    }
+
+    .param,
+    .conditions {
+        width: 50%;
+    }
+
+    .conditions {
+        padding-top: 2.6rem;
+    }
+
+    .conditions div {
+        text-align: center;
+    }
+
+    .condition_type {
+        font-size: 1.3rem;
+    }
+
+    .condition_type::after {
+        display: none;
+    }
+
+    .condition_value_percent,
+    .condition_value_sum,
+    .result_num_payment {
+        margin-left: 2rem;
+    }
+
+    #programs .row {
+        flex-direction: column;
+    }
+
+    #programs .row:nth-of-type(1) {
+        margin: 0;
+    }
+
+    #programs .element {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    #quiz {
+        padding: 8.125rem 5rem;
+    }
+
+    #quiz .heading {
+        padding: 0 1rem 3.75rem;
+    }
+
+    #quiz .content {
+        width: 90%;
+    }
+
+    #quiz .progress {
+        padding: 2.375rem 2rem 0;
+    }
+
+    #quiz .quiz {
+        padding: 0 2rem 2.375rem;
+    }
+
+    #profits .column {
+        width: 50%;
+    }
+
+    .circle-plus .circle .vertical {
+        left: 95.83%;
+    }
+
+    footer .normal {
+        display: none;
+    }
+
+    footer .mobile {
+        display: flex;
+    }
+
+    footer .logo {
+        margin: 0;
+    }
+
+    footer .mobile {
+        padding: 2rem;
+    }
+
+    .irs-line-right {
+        height: 16px;
+        background-position: 25px -3px;
+    }
+
+    .irs-line-left {
+        display: none;
+    }
+
+    .irs-line-mid {
+        left: 6%;
+        width: 100%;
+    }
+
+    .irs-bar {
+        height: 12px;
+        top: 39px;
+        background-position: -19px -54px;
+    }
+
+    .irs-slider {
+        background-position: -1px -75px !important;
+        width: 29px;
+        height: 38px;
+    }
+
+    .irs-slider:hover {
+        background-position: -1px -81px !important;
+        width: 29px;
+        height: 38px;
+    }
+
+    .irs-bar-edge {
+        top: 38px;
+        width: 26px;
+        height: 14px;
+        background-position: 35px -53px;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1000px) {
+
+    html,
+    body {
+        font-size: 14px
+    }
+
+    .header_logo {
+        width: 9rem;
+    }
+
+    .header_item:nth-of-type(1) {
+        padding: 1.0625rem 2rem;
+    }
+
+    .header_item:nth-of-type(2) {
+        padding: 0.625rem 6rem 0.625rem 2.1rem;
+    }
+
+    .week_house_list {
+        width: 90%;
+    }
+
+    .packages {
+        padding: 8.0625rem 2rem;
+    }
+
+    .individual_way_content {
+        padding: 0 2rem;
+    }
+
+    .individual_way {
+        padding: 4rem 2rem;
+    }
+
+    .presents_content {
+        padding-left: 9rem;
+    }
+
+    .irs-bar {
+        top: 1.78571429rem;
+    }
+
+    .irs-bar-edge {
+        background-position: 0 -4rem;
+    }
+
+    .irs-slider {
+        background-position: -0.125rem -5.18rem !important;
+    }
+
+    .irs-line-left {
+        background-position: 0 -2rem;
+    }
+
+    .irs-line-right {
+        background-position: 3rem -2rem;
+    }
+
+    .partners_item {
+        width: 50%;
     }
 }
