@@ -1360,6 +1360,7 @@ footer .mobile {
 #quiz .controls a {
     text-decoration: unset;
     color: #01b4f7;
+    margin-left: 0.5rem;
 }
 
 #quiz .dots {
@@ -1401,6 +1402,64 @@ footer .mobile {
 .invisible_item {
     opacity: 0;
     display: none;
+}
+
+.checkbox_container {
+    user-select: none;
+  }
+  
+  .checkbox_container .square {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 0.0625rem solid #01b4f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+  }
+
+  .checkbox_container svg {
+      opacity: 0;
+      width: 80%;
+  }
+  
+  .checkbox_container input[type="checkbox"],
+  .quiz_radio_input input[type="radio"] {
+    display: none;
+  }
+  
+  .checkbox_container input:checked + .square {
+    background-color: #01b4f7;
+  }
+
+  .checkbox_container input:checked + .square svg {
+      opacity: 1;
+  }
+
+  .quiz_radio_input {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    font-size: 0.9375rem;
+    color: #333333;
+    font-weight: lighter;
+}
+
+.quiz_radio_input .checkbox_mark {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border-radius: 50%;
+    border: 0.0625rem solid #00b4f7;
+    display: inline-block;
+    margin-right: 1rem;
+
+}
+
+.quiz_radio_input input:checked+.checkbox_mark {
+    background-image: url(../img/check_box_circle.svg);
+    background-size: 100% 100%;
 }
 
 /*******************/

@@ -368,10 +368,17 @@
                         </div>
                         <hr>
                         <div class="controls">
-                            <div class="checkbox_container">
-                                <input type="checkbox" id="policy">
-                                <label for="policy">Я принимаю <a href="">условия передачи информации</a></label>
-                            </div>
+                            <label class="checkbox_container">
+                                <input type="checkbox">
+                                </input>
+                                <div class="square">
+                                    <svg fill="#ffffff" enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512"
+                                        xml:space="preserve">
+                                        <path d="m504.5 75.496c-9.997-9.998-26.205-9.998-36.204 0l-306.7 306.71-117.89-117.89c-9.997-9.998-26.205-9.997-36.204 0-9.998 9.997-9.998 26.205 0 36.203l135.99 135.99c9.994 9.997 26.214 9.99 36.204 0l324.81-324.81c9.998-9.997 9.997-26.206 0-36.204z" />
+                                    </svg>
+                                </div>
+                                Я принимаю <a href=""> условия передачи информации</a>
+                            </label>
                             <button class="btn quiz_btn" id="quiz_btn">Далее</button>
                         </div>
                     </div>
@@ -483,10 +490,17 @@
                         </div>
                         <div class="contacts pasport_info">
                             <h3>Адрес фактического проживания</h3>
-                            <div class="checkbox_container">
-                                <input type="checkbox" id="">
-                                <label for="">Совпадает с адресом регистрации</label>
-                            </div>
+                            <label class="checkbox_container">
+                                <input type="checkbox">
+                                </input>
+                                <div class="square">
+                                    <svg fill="#ffffff" enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512"
+                                        xml:space="preserve">
+                                        <path d="m504.5 75.496c-9.997-9.998-26.205-9.998-36.204 0l-306.7 306.71-117.89-117.89c-9.997-9.998-26.205-9.997-36.204 0-9.998 9.997-9.998 26.205 0 36.203l135.99 135.99c9.994 9.997 26.214 9.99 36.204 0l324.81-324.81c9.998-9.997 9.997-26.206 0-36.204z" />
+                                    </svg>
+                                </div>
+                                Совпадает с адресом регистрации</a>
+                            </label>
                         </div>
                         <hr>
                         <div class="controls">
@@ -507,23 +521,32 @@
                                 <option value="">Последняя доля/комната</option>
                                 <option value="">Москва</option>
                             </select>
-                            <div class="checkbox_container">
-                                <input type="checkbox" id="">
-                                <label for="">Использование материнского капитала</label>
-                            </div>
+                            <label class="checkbox_container">
+                                <input type="checkbox">
+                                </input>
+                                <div class="square">
+                                    <svg fill="#ffffff" enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512"
+                                        xml:space="preserve">
+                                        <path d="m504.5 75.496c-9.997-9.998-26.205-9.998-36.204 0l-306.7 306.71-117.89-117.89c-9.997-9.998-26.205-9.997-36.204 0-9.998 9.997-9.998 26.205 0 36.203l135.99 135.99c9.994 9.997 26.214 9.99 36.204 0l324.81-324.81c9.998-9.997 9.997-26.206 0-36.204z" />
+                                    </svg>
+                                </div>
+                                Использование материнского капитала</a>
+                            </label>
                         </div>
                         <div class="contacts bought_target">
                             <h3>Покупаемая недвижимость</h3>
-                            <div class="radio_block">
-                                <label for="">Новостройка</label>
-                                <input type="radio" name="type_of_apartment" id="">
-
-                            </div>
-                            <div class="radio_block">
-                                <label for="">Вторичный рынок</label>
-                                <input type="radio" name="type_of_apartment" id="">
-
-                            </div>
+                            <label class="radio_block quiz_radio_input">
+                                <input type="radio" name="type_of_apartment" id="" value="">
+                                <div class="checkbox_mark">
+                                </div>
+                                Новостройка
+                            </label>
+                            <label class="radio_block quiz_radio_input">
+                                <input type="radio" name="type_of_apartment" id="" value="">
+                                <div class="checkbox_mark">
+                                </div>
+                                Вторичный рынок
+                            </label>
                             <input type="text" class="bought_target__b_input" id="city" placeholder="Город">
                             <input type="text" class="bought_target__b_input" id="" placeholder="Примерная стоимость объекта, ₽">
                             <input type="text" id="" placeholder="Первоначальный взнос, ₽">
